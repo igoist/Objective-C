@@ -1,6 +1,6 @@
-#Now we are at step **2**.
+# Now we are at step **2**.
 
-##Step 1:
+## Step 1:
 
 - [x] Create the project, set those basic code of mapView, implement those delegate.
 
@@ -8,10 +8,10 @@
 
 - [x] Set region to custom location.
 
-##Step 2:
+## Step 2:
 
-- [ ] Try to create a <code>MKAnnotation<code> instant, and implement:
-      - [ ] * AAAAA
+- [ ] Try to create a <code>MKAnnotation</code> instant, and implement:
+      - [ ] AAAAA
       - [x] * BBBBB
       - [ ] * CCCCC
-      - [ ] DDDDD
+      - [x] DDDDD
