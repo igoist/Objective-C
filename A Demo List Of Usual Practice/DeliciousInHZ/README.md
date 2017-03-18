@@ -11,7 +11,5 @@
 ## Step 2:
 
 - [ ] Try to create a <code>MKAnnotation</code> instant, and implement:
-      * AAAAA
-      * BBBBB
-      * CCCCC
-      * DDDDD
+* add title, content, img, these are basic
+* hold, tap functions
