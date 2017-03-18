@@ -11,7 +11,7 @@
 ## Step 2:
 
 - [ ] Try to create a <code>MKAnnotation</code> instant, and implement:
-      - [ ] AAAAA
-      - [x] * BBBBB
-      - [ ] * CCCCC
-      - [x] DDDDD
+      * AAAAA
+      * BBBBB
+      * CCCCC
+      * DDDDD
