@@ -368,5 +368,21 @@ cell 的位置，可以基于这些边缘点由相同的变换方案计算出来
 
 #鸣谢#
 
+我们想要感谢所有我们实验室的成员与开发团队所提供的大量建议与大力支持。
+
+
+#引用#
+
+[1] ISO/IEC 15420:2000. Information technology – Automatic identification and data capture techniques – Bar code symbology specification – EAN/UPC, 2000.
+
+[2] ISO/IEC 18004:2000. Information technology – Automatic identification and data capture techniques – Bar code symbology – QR Code, 2000.
+
+[3] H. Kurosaka, K. Miyamoto, Y. Nagase, H. Ikegami, K. Sato, and M. Otsubo. Mo- bile Phone Application LSI Design Using C based Design Methodology. Tech-nical Report 4, NEC Corporation, 4 2003.
+
+[4] J. Matas, L. Soh, and J. Kittler. Object recognition using a tag. In 1997 International Conference on Image Processing (ICIP ’97) 3-Volume Set-Volume 1, pages 877–880. IEEE, IEEE Computer Society Press, 10 1997.
+
+[5] R. Muniz, L. Junco, and A. Otero. A Robust Software Barcode Reader Using the Hough Transform. In Proc. of 1999 International Conference on Information Intelligence and Systems, pages 313–319. IEEE, IEEE Computer Society Press, 1999.
+
+
 
 
