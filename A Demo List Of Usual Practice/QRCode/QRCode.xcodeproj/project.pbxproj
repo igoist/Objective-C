@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FF57B97D1EBEBFD200F907C7 /* Generator.m in Sources */ = {isa = PBXBuildFile; fileRef = FF57B97C1EBEBFD200F907C7 /* Generator.m */; };
 		FF676D5C1E62EDD50021B25B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FF676D5B1E62EDD50021B25B /* main.m */; };
 		FF676D5F1E62EDD50021B25B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FF676D5E1E62EDD50021B25B /* AppDelegate.m */; };
 		FF676D621E62EDD50021B25B /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FF676D611E62EDD50021B25B /* ViewController.m */; };
@@ -15,10 +16,13 @@
 		FF676D6D1E62EDD50021B25B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF676D6B1E62EDD50021B25B /* LaunchScreen.storyboard */; };
 		FF676D761E62EF6C0021B25B /* ExController.m in Sources */ = {isa = PBXBuildFile; fileRef = FF676D751E62EF6C0021B25B /* ExController.m */; };
 		FF77A4941E6FA08D00470751 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF77A4931E6FA08D00470751 /* Assets.xcassets */; };
+		FF77A4961E71A08800470751 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = FF77A4951E71A08800470751 /* README.md */; };
 		FFFC0B931E6EFCAF00B6F9BB /* Picker.m in Sources */ = {isa = PBXBuildFile; fileRef = FFFC0B921E6EFCAF00B6F9BB /* Picker.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FF57B97B1EBEBF5F00F907C7 /* Generator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Generator.h; sourceTree = "<group>"; };
+		FF57B97C1EBEBFD200F907C7 /* Generator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Generator.m; sourceTree = "<group>"; };
 		FF676D571E62EDD50021B25B /* QRCode.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QRCode.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF676D5B1E62EDD50021B25B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		FF676D5D1E62EDD50021B25B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -32,6 +36,7 @@
 		FF676D741E62EEFC0021B25B /* ExController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ExController.h; sourceTree = "<group>"; };
 		FF676D751E62EF6C0021B25B /* ExController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExController.m; sourceTree = "<group>"; };
 		FF77A4931E6FA08D00470751 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FF77A4951E71A08800470751 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		FFFC0B911E6EFC7000B6F9BB /* Picker.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Picker.h; sourceTree = "<group>"; };
 		FFFC0B921E6EFCAF00B6F9BB /* Picker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Picker.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -77,6 +82,7 @@
 				FF676D6E1E62EDD50021B25B /* Info.plist */,
 				FF676D661E62EDD50021B25B /* QRCode.xcdatamodeld */,
 				FF676D5A1E62EDD50021B25B /* Supporting Files */,
+				FF77A4951E71A08800470751 /* README.md */,
 			);
 			path = QRCode;
 			sourceTree = "<group>";
@@ -96,6 +102,8 @@
 				FFFC0B921E6EFCAF00B6F9BB /* Picker.m */,
 				FF676D741E62EEFC0021B25B /* ExController.h */,
 				FF676D751E62EF6C0021B25B /* ExController.m */,
+				FF57B97B1EBEBF5F00F907C7 /* Generator.h */,
+				FF57B97C1EBEBFD200F907C7 /* Generator.m */,
 			);
 			name = CustomClass;
 			sourceTree = "<group>";
@@ -174,7 +182,9 @@
 				FF676D761E62EF6C0021B25B /* ExController.m in Sources */,
 				FFFC0B931E6EFCAF00B6F9BB /* Picker.m in Sources */,
 				FF676D621E62EDD50021B25B /* ViewController.m in Sources */,
+				FF77A4961E71A08800470751 /* README.md in Sources */,
 				FF676D681E62EDD50021B25B /* QRCode.xcdatamodeld in Sources */,
+				FF57B97D1EBEBFD200F907C7 /* Generator.m in Sources */,
 				FF676D5F1E62EDD50021B25B /* AppDelegate.m in Sources */,
 				FF676D5C1E62EDD50021B25B /* main.m in Sources */,
 			);

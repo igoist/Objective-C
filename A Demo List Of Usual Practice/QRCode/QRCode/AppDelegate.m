@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "ExController.h"
 #import "Picker.h"
+#import "Generator.h"
 
 @interface AppDelegate ()
 
@@ -24,7 +25,7 @@
     UITabBarController *tab = [UITabBarController new];
     UIViewController *vc1 = [UIViewController new];
     UIViewController *vc2 = [Picker new];
-    UIViewController *vc3 = [UIViewController new];
+    UIViewController *vc3 = [Generator new];
     UIViewController *vc4 = [ExController new];
     
     vc1.tabBarItem.title = @"XX";
