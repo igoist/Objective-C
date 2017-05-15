@@ -22,9 +22,6 @@
 
     
     
-    
-    
-    
     //画线条
     CGMutablePathRef path = CGPathCreateMutable();
     //2-1.设置起始点

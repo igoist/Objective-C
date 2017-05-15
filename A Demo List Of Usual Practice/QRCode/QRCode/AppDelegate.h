@@ -17,6 +17,10 @@
 @property (readonly, strong, nonatomic) NSManagedObjectModel *managedObjectModel;
 @property (readonly, strong, nonatomic) NSPersistentStoreCoordinator *persistentStoreCoordinator;
 
+//@property (strong, nonatomic) UIImageView *splashView;
+@property (strong, nonatomic) UIView *splashView;
+//@property (strong, nonatomic) UIView *windowBackground;
+
 - (void)saveContext;
 - (NSURL *)applicationDocumentsDirectory;
 

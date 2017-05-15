@@ -7,41 +7,148 @@
 //
 
 #import "AppDelegate.h"
+#import "LoginView.h"
 #import "ExController.h"
 #import "Picker.h"
 #import "Generator.h"
 
 @interface AppDelegate ()
 
+
+
 @end
 
 @implementation AppDelegate
 
-
+@synthesize splashView;
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 
-    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+//    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
-    UITabBarController *tab = [UITabBarController new];
-    UIViewController *vc1 = [UIViewController new];
-    UIViewController *vc2 = [Picker new];
-    UIViewController *vc3 = [Generator new];
-    UIViewController *vc4 = [ExController new];
-    
-    vc1.tabBarItem.title = @"XX";
-    vc2.tabBarItem.title = @"读取";
-    vc3.tabBarItem.title = @"生成";
-    vc4.tabBarItem.title = @"扫描";
-    
-    tab.view.backgroundColor = [UIColor whiteColor];
-    
-    tab.viewControllers = @[vc1,vc2,vc3, vc4];
-    
-    self.window.rootViewController = tab;
+//    UITabBarController *tab = [UITabBarController new];
+//    UIViewController *vc2 = [Picker new];
+//    UIViewController *vc3 = [Generator new];
+//    UIViewController *vc4 = [ExController new];
+//    UIViewController *vc1 = [UIViewController new];
+//    LoginView *vc5 = [LoginView new];
+//
+//    vc2.tabBarItem.title = @"读取";
+//    vc2.tabBarItem.image = [UIImage imageNamed:@"icon3_24dp"];
+//    vc3.tabBarItem.title = @"生成";
+//    vc3.tabBarItem.image = [UIImage imageNamed:@"icon1_24dp"];
+//    vc4.tabBarItem.title = @"扫描";
+//    vc4.tabBarItem.image = [UIImage imageNamed:@"icon1_24dp"];
+//    vc1.tabBarItem.title = @"管理";
+//    vc1.tabBarItem.image = [UIImage imageNamed:@"icon2_24dp"];
+//    
+//    vc5.tabBarItem.title = @"管理";
+//    vc5.tabBarItem.image = [UIImage imageNamed:@"icon2_24dp"];
+//    
+//    tab.view.backgroundColor = [UIColor whiteColor];
+//    
+//    tab.viewControllers = @[vc2,vc3, vc4, vc1, vc5];
+//    
+//    self.window.rootViewController = tab;
     
     [self.window makeKeyAndVisible];
     
+    splashView = [[UIView alloc]initWithFrame: CGRectMake(0, 0, 320, 568)];
+    splashView.backgroundColor = [UIColor colorWithRed: 34.0/255.0 green: 34.0/255.0 blue: 34.0/255.0 alpha: 1.0];
+    
+    [self.window addSubview: splashView];
+    [self.window bringSubviewToFront: splashView];
+    
+    [self performSelector:@selector(textEnter) withObject:nil afterDelay: 0.8f];
+    [self performSelector:@selector(iconEnter) withObject:nil afterDelay: 0.0f];
+    [self performSelector:@selector(leavePrepare) withObject:nil afterDelay: 5.3f];
+    [self performSelector:@selector(leave) withObject:nil afterDelay: 5.66f];
+    //设置动画效果
+//    [UIView beginAnimations:nil context:nil];
+//    [UIView setAnimationDuration: 10.0];
+//    [UIView setAnimationDelegate:self];
+//    CGAffineTransform transform =CGAffineTransformMakeRotation(M_PI);
+//    [_splashView setTransform:transform];
+////    _splashView.alpha=0.0;
+////    _splashView.frame=CGRectMake(96, 220, 128, 128);
+//    [UIView commitAnimations];
     return YES;
+}
+
+-(void)iconEnter
+{
+    UIImageView *icon = [[UIImageView alloc]initWithFrame:CGRectMake(96, 140, 128, 128)];
+    icon.image = [UIImage imageNamed:@"Default"];
+    [splashView addSubview:icon];
+    [UIView beginAnimations:nil context:nil];
+    [UIView setAnimationDuration: 20];
+    [UIView setAnimationDelegate:self];
+    CGAffineTransform transform =CGAffineTransformMakeRotation(M_PI);
+    [icon setTransform:transform];
+    [UIView commitAnimations];
+}
+
+-(void)textEnter
+{
+    UILabel *text =[[UILabel alloc] initWithFrame:CGRectMake(20, 270, 280, 20)];
+    text.text = @"Welcome to QRCode";
+    text.font = [UIFont fontWithName:@"Helvetica Neue" size: 18];
+    text.textAlignment = NSTextAlignmentCenter;
+    text.textColor = [UIColor colorWithRed: 249/255.0 green: 249/255.0 blue: 249/255.0 alpha: 1];
+    text.alpha = 0;
+    [splashView addSubview: text];
+    [UIView beginAnimations:nil context:nil];
+    [UIView setAnimationDuration: 2];
+    [UIView setAnimationDelegate:self];
+    text.alpha = 1;
+    [UIView commitAnimations];
+}
+
+-(void) leavePrepare
+{
+    [UIView beginAnimations:nil context:nil];
+    [UIView setAnimationDuration: 0.4];
+    [UIView setAnimationDelegate:self];
+    splashView.alpha = 0;
+    [UIView commitAnimations];
+}
+
+-(void) leave
+{
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+
+    UITabBarController *tab = [UITabBarController new];
+    UIViewController *vc2 = [Picker new];
+    UIViewController *vc3 = [Generator new];
+    UIViewController *vc4 = [ExController new];
+    UIViewController *vc1 = [UIViewController new];
+    LoginView *vc5 = [LoginView new];
+
+
+    vc2.tabBarItem.title = @"读取";
+    vc2.tabBarItem.image = [UIImage imageNamed:@"icon3_24dp"];
+    vc3.tabBarItem.title = @"生成";
+    vc3.tabBarItem.image = [UIImage imageNamed:@"icon1_24dp"];
+    vc4.tabBarItem.title = @"扫描";
+    vc4.tabBarItem.image = [UIImage imageNamed:@"icon1_24dp"];
+    vc1.tabBarItem.title = @"管理";
+    vc1.tabBarItem.image = [UIImage imageNamed:@"icon2_24dp"];
+
+    vc5.tabBarItem.title = @"管理";
+    vc5.tabBarItem.image = [UIImage imageNamed:@"icon2_24dp"];
+
+    tab.view.backgroundColor = [UIColor whiteColor];
+
+    tab.viewControllers = @[vc2,vc3, vc4, vc1, vc5];
+    
+    self.window.rootViewController = tab;
+    
+//    [UIView beginAnimations:nil context:nil];
+//    [UIView setAnimationDuration: 2.0];
+//    [UIView setAnimationDelegate:self];
+//    splashView.alpha=0.0;
+//    [UIView commitAnimations];
+    
+    [self.window makeKeyAndVisible];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {
