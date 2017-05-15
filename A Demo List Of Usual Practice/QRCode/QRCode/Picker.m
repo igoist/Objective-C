@@ -29,17 +29,6 @@
     [btnRead addTarget: self action: @selector(actionRead) forControlEvents: UIControlEventTouchUpInside];
     [self.view addSubview: btnRead];
     // btnRead.center = CGPointMake(CGRectGetMidX([UIScreen mainScreen].bounds), CGRectGetMidY([UIScreen mainScreen].bounds));
-    
-//    NSString *urlString = @"http://192.168.1.105:8000/timeline/api/";
-//    urlString = [urlString stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
-//    NSURL *url = [NSURL URLWithString:urlString];
-//    NSURLRequest *request = [NSURLRequest requestWithURL:url cachePolicy:NSURLRequestReloadIgnoringCacheData timeoutInterval:10];
-//    NSURLResponse *httpUrlResponse;
-//    NSError *error ;
-//    //在OC中使用NSURLConnection类，和服务器连接，这里是同步连接
-//    NSData *data = [NSURLConnection sendSynchronousRequest:request returningResponse:&httpUrlResponse error:&error];
-//    NSDictionary *dictionary = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:&error];
-//    NSLog(@"%@", dictionary);
 }
 
 - (void)actionRead

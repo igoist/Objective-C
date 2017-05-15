@@ -108,6 +108,11 @@
                 if ([dict[@"name"] isEqual: _account.text]) {
                     if ([dict[@"passwd"] isEqual: _password.text]) {
                         NSLog(@"密码正确：%@", dict[@"passwd"]);
+                        
+                        dispatch_async(dispatch_get_main_queue(), ^{
+                        // here!!!!!!!!!
+                            
+                        });
                         return;
                     } else if ([_password.text isEqual: @""]) {
                         NSLog(@"Yes ---:%@", _password.text);

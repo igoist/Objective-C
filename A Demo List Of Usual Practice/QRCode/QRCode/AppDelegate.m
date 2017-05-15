@@ -116,31 +116,31 @@
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
 
-    UITabBarController *tab = [UITabBarController new];
-    UIViewController *vc2 = [Picker new];
-    UIViewController *vc3 = [Generator new];
-    UIViewController *vc4 = [ExController new];
-    UIViewController *vc1 = [UIViewController new];
+//    UITabBarController *tab = [UITabBarController new];
+//    UIViewController *vc2 = [Picker new];
+//    UIViewController *vc3 = [Generator new];
+//    UIViewController *vc4 = [ExController new];
+//    UIViewController *vc1 = [UIViewController new];
     LoginView *vc5 = [LoginView new];
 
-
-    vc2.tabBarItem.title = @"读取";
-    vc2.tabBarItem.image = [UIImage imageNamed:@"icon3_24dp"];
-    vc3.tabBarItem.title = @"生成";
-    vc3.tabBarItem.image = [UIImage imageNamed:@"icon1_24dp"];
-    vc4.tabBarItem.title = @"扫描";
-    vc4.tabBarItem.image = [UIImage imageNamed:@"icon1_24dp"];
-    vc1.tabBarItem.title = @"管理";
-    vc1.tabBarItem.image = [UIImage imageNamed:@"icon2_24dp"];
+//
+//    vc2.tabBarItem.title = @"读取";
+//    vc2.tabBarItem.image = [UIImage imageNamed:@"icon3_24dp"];
+//    vc3.tabBarItem.title = @"生成";
+//    vc3.tabBarItem.image = [UIImage imageNamed:@"icon1_24dp"];
+//    vc4.tabBarItem.title = @"扫描";
+//    vc4.tabBarItem.image = [UIImage imageNamed:@"icon1_24dp"];
+//    vc1.tabBarItem.title = @"管理";
+//    vc1.tabBarItem.image = [UIImage imageNamed:@"icon2_24dp"];
 
     vc5.tabBarItem.title = @"管理";
     vc5.tabBarItem.image = [UIImage imageNamed:@"icon2_24dp"];
 
-    tab.view.backgroundColor = [UIColor whiteColor];
+//    tab.view.backgroundColor = [UIColor whiteColor];
 
-    tab.viewControllers = @[vc2,vc3, vc4, vc1, vc5];
+//    tab.viewControllers = @[vc2,vc3, vc4, vc1, vc5];
     
-    self.window.rootViewController = tab;
+    self.window.rootViewController = vc5;
     
 //    [UIView beginAnimations:nil context:nil];
 //    [UIView setAnimationDuration: 2.0];
@@ -174,6 +174,12 @@
     // Saves changes in the application's managed object context before the application terminates.
     [self saveContext];
 }
+
+
+
+
+
+
 
 #pragma mark - Core Data stack
 
