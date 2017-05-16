@@ -21,6 +21,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    UILabel *_header=[[UILabel alloc] initWithFrame:CGRectMake(20, 100, self.view.frame.size.width-40, 50)];
+    _header.text = @"QRCode";
+    _header.font = [UIFont fontWithName: @"Helvetica Neue" size: 48];
+    _header.textAlignment = NSTextAlignmentCenter;
+    _header.textColor = [UIColor colorWithRed: 97/255.0 green: 218/255.0 blue: 251/255.0 alpha: 1];
+    [self.view addSubview: _header];
+    
     // new & 设置模糊图层
     bgModal = [UIView new];
     bgModal.backgroundColor = [UIColor colorWithRed: 0.0/255.0 green: 233.0/255.0 blue: 0.0/255.0 alpha: 0.5];

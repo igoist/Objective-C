@@ -2,11 +2,13 @@
 //  UserInfo.m
 //  QRCode
 //
-//  Created by 許天柱 on 5/15/17.
+//  Created by 許天柱 on 3/15/17.
 //  Copyright © 2017 Egoist. All rights reserved.
 //
 
 #import "UserInfo.h"
+#import "LoginView.h"
+
 
 @interface UserInfo()
 
@@ -134,8 +136,15 @@
     [_logoutButton setTitle: @"Logout" forState: UIControlStateNormal];
     [_logoutButton setBackgroundColor:[UIColor colorWithRed: 51/255.0 green: 102/255.0 blue: 255/255.0 alpha: 1]];
     [_logoutButton setTitleColor:[UIColor whiteColor] forState: UIControlStateNormal];
-//    [_logoutButton addTarget: self action: @selector(handleLogin:) forControlEvents: UIControlEventTouchUpInside];
+    [_logoutButton addTarget: self action: @selector(handleLogout:) forControlEvents: UIControlEventTouchUpInside];
     [self.view addSubview: _logoutButton];
+}
+
+-(void) handleLogout: (UIButton *)btn {
+    NSLog(@"handleLogout");
+    UIViewController *vc5 = [LoginView new];
+//    [self.navigationController popToViewController: vc5 animated: YES];
+    [self presentViewController: vc5 animated:YES completion:nil];
 }
 
 @end

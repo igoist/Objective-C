@@ -28,6 +28,15 @@
     
     CGSize windowSize = [UIScreen mainScreen].bounds.size;
     
+    UILabel *_header=[[UILabel alloc] initWithFrame:CGRectMake(20, 100, self.view.frame.size.width-40, 50)];
+    _header.text = @"QRCode";
+    _header.font = [UIFont fontWithName: @"Helvetica Neue" size: 48];
+    _header.textAlignment = NSTextAlignmentCenter;
+    _header.textColor = [UIColor colorWithRed: 97/255.0 green: 218/255.0 blue: 251/255.0 alpha: 1];
+    [self.view addSubview: _header];
+    
+    //
+    
     self.tfCode = [[UITextField alloc] initWithFrame: CGRectMake(10, 30, windowSize.width - 100, 40)];
     [self.view addSubview: self.tfCode];
     self.tfCode.borderStyle = UITextBorderStyleRoundedRect;
@@ -37,13 +46,13 @@
     [self.btnGenerate addTarget: self action: @selector(actionGenerate) forControlEvents: UIControlEventTouchUpInside];
     self.btnGenerate.backgroundColor = [UIColor lightGrayColor];
     [self.btnGenerate setTitle: @"生成" forState: UIControlStateNormal];
-    [self.btnGenerate setTitleColor: [UIColor blackColor] forState: UIControlStateNormal];
+    [self.btnGenerate setTitleColor: [UIColor colorWithRed: 249/255.0 green: 249/255.0 blue: 249/255.0 alpha: 1] forState: UIControlStateNormal];
     
-    self.imageView = [[UIImageView alloc] initWithFrame: CGRectMake(0, 0, 300, 300)];
+    self.imageView = [[UIImageView alloc] initWithFrame: CGRectMake(0, 60, 300, 300)];
     [self.view addSubview: self.imageView];
-    self.imageView.center = CGPointMake(windowSize.width/2, windowSize.height/2);
+    self.imageView.center = CGPointMake(windowSize.width/2, windowSize.height/2 + 42);
     
-    self.tfCode.text = @"http://adad184.com";
+    self.tfCode.text = @"40;临安;17-16-10;4";
 }
 
 - (void)actionGenerate

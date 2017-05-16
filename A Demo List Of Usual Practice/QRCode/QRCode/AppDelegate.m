@@ -8,9 +8,10 @@
 
 #import "AppDelegate.h"
 #import "LoginView.h"
-#import "ExController.h"
-#import "Picker.h"
-#import "Generator.h"
+//#import "ExController.h"
+//#import "Picker.h"
+//#import "Generator.h"
+#import "UserInfo.h"
 
 @interface AppDelegate ()
 
@@ -24,12 +25,12 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 
 //    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    
+//    
 //    UITabBarController *tab = [UITabBarController new];
 //    UIViewController *vc2 = [Picker new];
 //    UIViewController *vc3 = [Generator new];
 //    UIViewController *vc4 = [ExController new];
-//    UIViewController *vc1 = [UIViewController new];
+//    UIViewController *vc1 = [UserInfo new];
 //    LoginView *vc5 = [LoginView new];
 //
 //    vc2.tabBarItem.title = @"读取";
@@ -62,6 +63,7 @@
     [self performSelector:@selector(iconEnter) withObject:nil afterDelay: 0.0f];
     [self performSelector:@selector(leavePrepare) withObject:nil afterDelay: 5.3f];
     [self performSelector:@selector(leave) withObject:nil afterDelay: 5.66f];
+    
     //设置动画效果
 //    [UIView beginAnimations:nil context:nil];
 //    [UIView setAnimationDuration: 10.0];
@@ -116,11 +118,11 @@
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
 
-//    UITabBarController *tab = [UITabBarController new];
+    UITabBarController *tab = [UITabBarController new];
 //    UIViewController *vc2 = [Picker new];
 //    UIViewController *vc3 = [Generator new];
 //    UIViewController *vc4 = [ExController new];
-//    UIViewController *vc1 = [UIViewController new];
+    UIViewController *vc1 = [UserInfo new];
     LoginView *vc5 = [LoginView new];
 
 //
@@ -130,8 +132,8 @@
 //    vc3.tabBarItem.image = [UIImage imageNamed:@"icon1_24dp"];
 //    vc4.tabBarItem.title = @"扫描";
 //    vc4.tabBarItem.image = [UIImage imageNamed:@"icon1_24dp"];
-//    vc1.tabBarItem.title = @"管理";
-//    vc1.tabBarItem.image = [UIImage imageNamed:@"icon2_24dp"];
+    vc1.tabBarItem.title = @"管理";
+    vc1.tabBarItem.image = [UIImage imageNamed:@"icon2_24dp"];
 
     vc5.tabBarItem.title = @"管理";
     vc5.tabBarItem.image = [UIImage imageNamed:@"icon2_24dp"];
@@ -139,6 +141,7 @@
 //    tab.view.backgroundColor = [UIColor whiteColor];
 
 //    tab.viewControllers = @[vc2,vc3, vc4, vc1, vc5];
+    tab.viewControllers = @[vc1, vc5];
     
     self.window.rootViewController = vc5;
     
@@ -150,6 +153,8 @@
     
     [self.window makeKeyAndVisible];
 }
+
+
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
