@@ -114,21 +114,21 @@
                     @"name": @"avvxtz",
                     @"passwd": @"111111",
                     @"tp": @"用户",
-                    @"v": @"会员价格"
+                    @"v": @"会员报价"
                 },
                 @"dic3": @{
                     @"index": @2,
                     @"name": @"egoist",
                     @"passwd": @"111111",
                     @"tp": @"管理员",
-                    @"v": @"内部价格"
+                    @"v": @"内部报价"
                 },
                 @"dic2": @{
                     @"index": @1,
                     @"name": @"avvxtz1",
                     @"passwd": @"111112",
                     @"tp": @"用户",
-                    @"v": @"正常价格"
+                    @"v": @"正常报价"
                 }
             };
         }
@@ -191,25 +191,6 @@
                     }
                 }
                 flag = 8;
-    //            保留这些关于获取 dict 对象的操作
-    //            NSArray *keysArray = [dict allKeys];
-    //            Boolean f1 = false;
-    //            for (int i = 0; i < keysArray.count; i++) {
-    //                NSString *key = keysArray[i];
-    //                if ([key isEqual: @"name"]) {
-    ////                    NSLog(@"Yes");
-    //                    NSString *value = dict[key];
-    //                    if ([_account.text isEqual: value]) {
-    //                        NSLog(@"Yes: %@", value);
-    //                        f1 = true;
-    //                    } else {
-    ////                        NSLog(@"No: %@", value);
-    //                    }
-    //                }
-    //                if (f1 && [key isEqual: @"passwd"]) {
-    //                    NSLog(@"Yes");
-    //                }
-    //            }
             }
         }
         if (flag > 0) {
@@ -232,7 +213,6 @@
             }
             flag = 0;
             UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) {
-                //                self.view.backgroundColor = [UIColor yellowColor];
             }];
             UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"提示" message: message preferredStyle: UIAlertControllerStyleAlert];
             [alertController addAction:cancelAction];
@@ -243,7 +223,6 @@
     }];
     
     [task resume];
-
 }
 
 

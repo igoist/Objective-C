@@ -29,7 +29,7 @@
     [self.view addSubview: _header];
     
     UILabel *_el=[[UILabel alloc] initWithFrame:CGRectMake(20, 160, self.view.frame.size.width-40, 20)];
-    _el.text = @"this is setting view, el psy congroo, el psy congroo";
+    _el.text = @"this is the picker view, el psy congroo, el psy congroo";
     _el.font = [UIFont fontWithName:@"Helvetica Neue" size: 12];
     _el.textAlignment = NSTextAlignmentCenter;
     _el.textColor = [UIColor colorWithRed: 249/255.0 green: 249/255.0 blue: 249/255.0 alpha: 1];
