@@ -28,14 +28,16 @@
     
     CGSize windowSize = [UIScreen mainScreen].bounds.size;
     
-    UILabel *_header=[[UILabel alloc] initWithFrame:CGRectMake(20, 100, self.view.frame.size.width-40, 50)];
+    UIView *bg = [[UIView alloc] initWithFrame: CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
+    bg.backgroundColor = [UIColor colorWithRed: 34/255.0 green: 34/255.0 blue: 34/255.0 alpha: 1];
+    [self.view addSubview: bg];
+    
+    UILabel *_header=[[UILabel alloc] initWithFrame: CGRectMake(20, 100, self.view.frame.size.width-40, 50)];
     _header.text = @"QRCode";
     _header.font = [UIFont fontWithName: @"Helvetica Neue" size: 48];
     _header.textAlignment = NSTextAlignmentCenter;
     _header.textColor = [UIColor colorWithRed: 97/255.0 green: 218/255.0 blue: 251/255.0 alpha: 1];
     [self.view addSubview: _header];
-    
-    //
     
     self.tfCode = [[UITextField alloc] initWithFrame: CGRectMake(10, 30, windowSize.width - 100, 40)];
     [self.view addSubview: self.tfCode];

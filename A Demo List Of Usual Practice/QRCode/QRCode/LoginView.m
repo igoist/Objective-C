@@ -104,8 +104,10 @@
         NSDictionary *dicts;
         NSLog(@"enter task");
         @try {
+            NSLog(@"enter localhost");
             dicts = [NSJSONSerialization JSONObjectWithData: data options: 0 error: nil];
         } @catch (NSException *exception) {
+            NSLog(@"just local data");
             dicts = @{
                 @"dic1": @{
                     @"index": @0,
@@ -146,18 +148,25 @@
                             UITabBarController *tab = [UITabBarController new];
                             UserInfo *vc1 = [UserInfo new];
                             vc1.dict = @{
-                                         @"ind": dict[@"index"],
-                                         @"account": dict[@"name"],
-                                         @"type": dict[@"tp"],
-                                         @"view": dict[@"v"]
-                                         };
-                            vc1.tabBarItem.title = @"管理";
+                                @"ind": dict[@"index"],
+                                @"account": dict[@"name"],
+                                @"type": dict[@"tp"],
+                                @"view": dict[@"v"]
+                            };
+                            
+                            vc1.tabBarItem.title = @"用户";
                             vc1.tabBarItem.image = [UIImage imageNamed:@"icon2_24dp"];
                             
                             UIViewController *vc2 = [Picker new];
-                            UIViewController *vc4 = [ExController new];
+                            ExController *vc4 = [ExController new];
                             vc2.tabBarItem.title = @"读取";
                             vc2.tabBarItem.image = [UIImage imageNamed:@"icon3_24dp"];
+                            vc4.dict = @{
+                                @"ind": dict[@"index"],
+                                @"account": dict[@"name"],
+                                @"type": dict[@"tp"],
+                                @"view": dict[@"v"]
+                            };
                             vc4.tabBarItem.title = @"扫描";
                             vc4.tabBarItem.image = [UIImage imageNamed:@"icon1_24dp"];
                             if ([dict[@"tp"] isEqualToString: @"用户"]) {
@@ -165,7 +174,7 @@
                             } else {
                                 UIViewController *vc3 = [Generator new];
                                 vc3.tabBarItem.title = @"生成";
-                                vc3.tabBarItem.image = [UIImage imageNamed:@"icon1_24dp"];
+                                vc3.tabBarItem.image = [UIImage imageNamed:@"icon5_24dp"];
                                 tab.viewControllers = @[vc2, vc4, vc3, vc1];
                             }
                             

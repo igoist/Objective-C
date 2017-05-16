@@ -98,9 +98,21 @@
         // 输出扫描字符串
         NSLog(@"本次解析内容：%@",metadataObject.stringValue);
         
+        NSString * tmp = metadataObject.stringValue;
+        
+        if ([tmp isEqualToString: @"56;临安"]) {
+            if ([_dict[@"view"] isEqualToString: @"正常报价"]) {
+                tmp = @"价格：56\n产地：临安";
+            } else if ([_dict[@"view"] isEqualToString: @"会员报价"]) {
+                tmp = @"价格：50\n产地：临安\n生产时间：17-16-10";
+            } else {
+                tmp = @"价格：40\n产地：临安\n生产时间：17-16-10\n运输成本：4";
+            }
+        }
+        
         UIAlertController *alert = [UIAlertController
                                     alertControllerWithTitle:@"消息"
-                                    message:metadataObject.stringValue
+                                    message: tmp
                                     preferredStyle:UIAlertControllerStyleAlert];
         UIAlertAction *ok = [UIAlertAction
                              actionWithTitle:@"继续"
