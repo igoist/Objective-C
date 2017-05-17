@@ -59,10 +59,10 @@
     [self.window addSubview: splashView];
     [self.window bringSubviewToFront: splashView];
     
-    [self performSelector:@selector(textEnter) withObject:nil afterDelay: 0.8f];
-    [self performSelector:@selector(iconEnter) withObject:nil afterDelay: 0.0f];
-    [self performSelector:@selector(leavePrepare) withObject:nil afterDelay: 5.3f];
-    [self performSelector:@selector(leave) withObject:nil afterDelay: 5.66f];
+    [self performSelector: @selector(textEnter) withObject: nil afterDelay: 0.8f];
+    [self performSelector: @selector(iconEnter) withObject: nil afterDelay: 0.0f];
+    [self performSelector: @selector(leavePrepare) withObject: nil afterDelay: 5.3f];
+    [self performSelector: @selector(leave) withObject: nil afterDelay: 5.66f];
     
     //设置动画效果
 //    [UIView beginAnimations:nil context:nil];

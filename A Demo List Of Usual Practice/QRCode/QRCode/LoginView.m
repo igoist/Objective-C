@@ -157,18 +157,27 @@
                             vc1.tabBarItem.title = @"用户";
                             vc1.tabBarItem.image = [UIImage imageNamed:@"icon2_24dp"];
                             
-                            UIViewController *vc2 = [Picker new];
+                            Picker *vc2 = [Picker new];
                             ExController *vc4 = [ExController new];
                             vc2.tabBarItem.title = @"读取";
                             vc2.tabBarItem.image = [UIImage imageNamed:@"icon3_24dp"];
+                            vc2.dict = @{
+                                 @"ind": dict[@"index"],
+                                 @"account": dict[@"name"],
+                                 @"type": dict[@"tp"],
+                                 @"view": dict[@"v"]
+                             };
+                            
                             vc4.dict = @{
                                 @"ind": dict[@"index"],
                                 @"account": dict[@"name"],
                                 @"type": dict[@"tp"],
                                 @"view": dict[@"v"]
                             };
+                            
                             vc4.tabBarItem.title = @"扫描";
                             vc4.tabBarItem.image = [UIImage imageNamed:@"icon1_24dp"];
+                            
                             if ([dict[@"tp"] isEqualToString: @"用户"]) {
                                 tab.viewControllers = @[vc2, vc4, vc1];
                             } else {
@@ -177,7 +186,6 @@
                                 vc3.tabBarItem.image = [UIImage imageNamed:@"icon5_24dp"];
                                 tab.viewControllers = @[vc2, vc4, vc3, vc1];
                             }
-                            
                             [self presentViewController:tab animated:YES completion:nil];
                         });
                         return;

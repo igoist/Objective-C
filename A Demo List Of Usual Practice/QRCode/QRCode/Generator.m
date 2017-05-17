@@ -64,15 +64,15 @@
     NSData *stringData = [text dataUsingEncoding: NSUTF8StringEncoding];
     
     //生成
-    CIFilter *qrFilter = [CIFilter filterWithName:@"CIQRCodeGenerator"];
-    [qrFilter setValue:stringData forKey:@"inputMessage"];
-    [qrFilter setValue:@"M" forKey:@"inputCorrectionLevel"];
+    CIFilter *qrFilter = [CIFilter filterWithName: @"CIQRCodeGenerator"];
+    [qrFilter setValue:stringData forKey: @"inputMessage"];
+    [qrFilter setValue:@"M" forKey: @"inputCorrectionLevel"];
     
     UIColor *onColor = [UIColor blackColor];
     UIColor *offColor = [UIColor whiteColor];
     
     //上色
-    CIFilter *colorFilter = [CIFilter filterWithName:@"CIFalseColor"
+    CIFilter *colorFilter = [CIFilter filterWithName: @"CIFalseColor"
                                        keysAndValues:
                              @"inputImage",qrFilter.outputImage,
                              @"inputColor0",[CIColor colorWithCGColor:onColor.CGColor],

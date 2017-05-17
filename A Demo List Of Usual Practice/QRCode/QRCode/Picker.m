@@ -66,6 +66,7 @@
     photoPicker.view.backgroundColor = [UIColor brownColor];
     [self presentViewController:photoPicker animated:YES completion:NULL];
 }
+
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
 {
     [self dismissViewControllerAnimated:YES completion:^{
@@ -81,12 +82,29 @@
     NSArray *features = [detector featuresInImage: image];
     CIQRCodeFeature *feature = [features firstObject];
     
-    NSString *result = feature.messageString;
+    NSString *tmp = feature.messageString;
     
-    if ( result )
+    if ( tmp )
     {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:result message:@"调用成功" delegate:nil cancelButtonTitle:@"ok" otherButtonTitles: nil];
-        [alert show];
+        if ([tmp isEqualToString: @"56;临安"]) {
+            if ([_dict[@"view"] isEqualToString: @"正常报价"]) {
+                tmp = @"价格：56\n产地：临安";
+            } else if ([_dict[@"view"] isEqualToString: @"会员报价"]) {
+                tmp = @"价格：50\n产地：临安\n生产时间：17-16-10";
+            } else {
+                tmp = @"价格：40\n产地：临安\n生产时间：17-16-10\n运输成本：4";
+            }
+        }
+        
+        UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"ok" style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) {
+        }];
+        UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"提示" message: tmp preferredStyle: UIAlertControllerStyleAlert];
+        [alertController addAction:cancelAction];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self presentViewController:alertController animated:YES completion:nil];
+        });
+//        UIAlertView *alert = [[UIAlertView alloc] initWithTitle: @"调用成功" message: tmp delegate:nil cancelButtonTitle:@"ok" otherButtonTitles: nil];
+//        [alert show];
     }
 }
 

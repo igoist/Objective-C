@@ -16,6 +16,8 @@
 
 @interface Picker : UIViewController
 
+@property (nonatomic,strong) NSDictionary *dict;
+
 @end
 
 

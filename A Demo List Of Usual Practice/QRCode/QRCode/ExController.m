@@ -78,7 +78,7 @@
     layer.frame = self.view.layer.bounds;
     [self.view.layer insertSublayer: layer atIndex: 0];
     
-    //开始捕获
+    // 开始捕获
     [self->session startRunning];
     
 }
@@ -139,9 +139,9 @@
                                      //[alert dismissViewControllerAnimated:YES completion:nil];
                                      
                                  }];
-        [alert addAction:ok];
-        [alert addAction:cancel];
-        [alert addAction:another];
+        [alert addAction: ok];
+        [alert addAction: cancel];
+        [alert addAction: another];
         [self presentViewController:alert animated:YES completion:nil];
         
     }
