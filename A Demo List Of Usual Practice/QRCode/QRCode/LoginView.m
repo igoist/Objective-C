@@ -92,9 +92,9 @@
 
 
 - (void)handleLogin: (UIButton *)btn {
-//    NSString *webPath=[NSString stringWithFormat:@"http://172.16.2.254/php/phonelogin?name=%@&pass=%@&btn=login",yourname,yourpass];
 //    NSString *webPath=[NSString stringWithFormat:@"http://127.0.0.1:8000/qrcode/api_user/name=%@&pass=%@", @"xxx", @"dd"];
     NSString *webPath=[NSString stringWithFormat: @"http://192.168.1.107:8000/qrcode/api_user/"];
+//    NSString *webPath=[NSString stringWithFormat: @"http://127.0.0.1:8000/qrcode/api_user/"];
 //    webPath = [webPath stringByAddingPercentEncodingWithAllowedCharacters: [NSCharacterSet characterSetWithCharactersInString:@"`#%^{}\"[]|\\<> "].invertedSet]; //url不允许为中文等特殊字符，需要进行字符串的转码为URL字符串，例如空格转换后为“%20”；
     NSURL *url=[NSURL URLWithString: webPath];
     NSURLRequest  *request = [NSURLRequest requestWithURL:url];
@@ -106,6 +106,9 @@
         @try {
             NSLog(@"enter localhost");
             dicts = [NSJSONSerialization JSONObjectWithData: data options: 0 error: nil];
+            NSLog(@"%@", dicts);
+            NSString *result = [[NSString alloc] initWithData:data  encoding:NSUTF8StringEncoding];
+            NSLog(@"%@", result);
         } @catch (NSException *exception) {
             NSLog(@"just local data");
             dicts = @{
@@ -131,6 +134,38 @@
                     @"v": @"正常报价"
                 }
             };
+//            NSData *data2 = [@"[{'passwd': '111111', 'index': 0, 'name': 'egoist', 'tp': '\u7ba1\u7406\u5458', 'v': '\u5185\u90e8\u62a5\u4ef7'}, {'passwd': '111112', 'index': 1, 'name': 'avvxtz1', 'tp': '\u7528\u6237', 'v': '\u4f1a\u5458\u62a5\u4ef7'}, {'passwd': '111111', 'index': 2, 'name': 'avvxtz', 'tp': '\u7528\u6237', 'v': '\u6b63\u5e38\u62a5\u4ef7'}]" dataUsingEncoding:NSUTF8StringEncoding];
+
+//            NSDictionary *dic1 = [NSDictionary dictionaryWithObjectsAndKeys:
+//                                         @0, @"index",
+//                                  @"egoist", @"name",
+//                                  @"111111", @"passwd",
+//                                  @"管理员",    @"tp",
+//                                  @"内部报价", @"v", nil];
+//            NSDictionary *dic2 = [NSDictionary dictionaryWithObjectsAndKeys:
+//                                  @0, @"index",
+//                                  @"avvxtz1", @"name",
+//                                  @"111112", @"passwd",
+//                                  @"用户",    @"tp",
+//                                  @"会员报价", @"v", nil];
+//            NSDictionary *dic3 = [NSDictionary dictionaryWithObjectsAndKeys:
+//                                  @0, @"index",
+//                                  @"avvxtz", @"name",
+//                                  @"111111", @"passwd",
+//                                  @"用户",    @"tp",
+//                                  @"正常报价", @"v", nil];
+//            NSMutableArray *aArr = [NSMutableArray arrayWithObjects: dic1,nil];
+//            dicts = [NSMutableArray array];
+//            [dicts addObject: aArr];
+//            aArr = [NSMutableArray arrayWithObjects: dic2,nil];
+//            [dicts addObject: aArr];
+//            aArr = [NSMutableArray arrayWithObjects: dic3,nil];
+//            [dicts addObject: aArr];
+            NSLog(@"what happened %@", dicts);
+//            NSLog(@"what happened %@", data2);
+//            NSLog(@"what happened %@", error);
+            
+           
         }
 //        NSLog(@"%@", [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil]);
         NSString * message = @"";
@@ -140,6 +175,11 @@
         if (flag != 9) {
             for (NSDictionary *dict in dicts) {
                 NSLog(@"%@", dict);
+              // 太恶心了，变量类型的事情后面再纠结，演示时候将上面两行还有上面webPath换成本地，uncommend下面四行
+//            for (NSString *key in dicts) {
+//                NSLog(@"%@", dicts[key]);
+//                NSDictionary *dict = dicts[key];
+//                NSLog(@"%@", dict[@"name"]);
                 if ([dict[@"name"] isEqual: _account.text]) {
                     if ([dict[@"passwd"] isEqual: _password.text]) {
                         NSLog(@"密码正确：%@", dict[@"passwd"]);
